@@ -1,0 +1,153 @@
+.ntn-tab-right-content{
+  font-weight: 500;
+  font-size: 13px;
+}
+    .card {
+      border-radius: 8px;
+      box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+    }
+
+    form {
+      border-radius: 8px;
+      box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+    }
+      .specific-items{
+    font-size: 14px;
+    font-weight: 500;
+    }
+
+    .section-two{
+      width: 25%;
+    }
+    .search-bar{
+      width: 75%;
+      
+    }
+    .section-one{
+      width: 75%;
+      
+    }
+
+    @media screen and (max-width:992px) {
+      .section-two{
+        width: 100% !important;
+      }
+      .search-bar{
+        width: 100% !important;
+      }
+      .section-one{
+        width: 100% !important;
+      }
+    }
+
+.nav-tabs .nav-item .nav-link{
+color: black;
+
+}
+.nav-tabs  li{
+font-size: 12px;
+margin-left: 5px;
+}
+.nav-tabs{
+  border: none;
+}
+.nav-tabs button{
+  /* border: 1px solid rgba(0,0,0,.125) !important; */
+  box-shadow: 0 1px 2px #00000029;
+  border-top: 1px solid rgba(0,0,0,.125) !important; 
+}
+.nav-tabs .active{
+  border: 1px solid rgba(0,0,0,.125) !important;
+  background-color: rgba(84, 121, 36, 0.8) !important; /* 0.5 for 50% opacity */
+color: white !important;
+border-radius: 5px !important;
+}
+
+.nav-tabs button:hover{
+  border: 1px solid rgba(0,0,0,.125);
+  background-color: rgba(84, 121, 36); /* 0.5 for 50% opacity */
+color: white !important;
+border-radius:5px;
+}
+
+
+.calulators-btn .btn-style-active{
+  /* border: 1px solid rgba(0,0,0,.125) !important; */
+  box-shadow: 0 1px 2px #00000029;
+  border-top: 1px solid rgba(0,0,0,.125) !important; 
+  background-color: rgba(84, 121, 36) !important; 
+  color: white !important;
+  border-radius:10px !important;
+  font-size: 13px;
+  font-weight: 500;
+}
+.calulators-btn .btn-style-active:hover{
+  /* border: 1px solid rgba(0,0,0,.125) !important; */
+  box-shadow: 0 1px 2px #00000029;
+  border-top: 1px solid rgba(0,0,0,.125) !important; 
+  background-color: rgba(84, 121, 36, 0.8) !important; /* 0.5 for 50% opacity */
+  color: white !important;
+  border-radius:10px !important;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.calulators-btn .btn-style{
+  /* border: 1px solid rgba(0,0,0,.125) !important; */
+  box-shadow: 0 1px 2px #00000029;
+  border-top: 1px solid rgba(0,0,0,.125) !important; 
+  background-color: black !important;
+  color: white !important;
+  border-radius:10px !important;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.calulators-btn .btn-style:hover{
+  border: 1px solid rgba(0,0,0,.125) !important;
+  background-color: rgba(84, 121, 36) !important; /* 0.5 for 50% opacity */
+color: white !important;
+border-radius:10px !important;
+}
+
+.sticky-card{
+    position: sticky !important;
+  top: 20px !important;
+}
+
+
+
+.checkmark-li-list ul{
+list-style-type: none;
+font-size: 15px;
+}
+
+.checkmark-li-list ul li::before{
+  content: "\2713";
+  display: inline-block;
+  margin-right: 10px;
+  color: green;
+  font-weight: bolder;
+  line-height: 30px;
+  }
+
+  .request-for-call{
+    border: 1px solid rgba(0,0,0,.125);
+  background-color: rgba(84, 121, 36, 0.8); /* 0.5 for 50% opacity */
+color: white;
+border-radius: 5px;
+  }
+
+  .request-for-call:hover{
+    border: 1px solid rgba(0,0,0,.125);
+  background-color: rgba(84, 121, 36); /* 0.5 for 50% opacity */
+color: white;
+border-radius:5px;
+  }
+
+.whatsapp-icon{
+  height: 25px;
+} 
+.whatsapp-icon-btn{
+  border: 1px solid rgba(0,0,0,.125);
+} 

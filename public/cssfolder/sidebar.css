@@ -1,0 +1,334 @@
+.section-one{
+  width: 75%;
+}
+.section-two{
+  width: 25%;
+  margin-top: 98px !important;
+  }
+.sticky-card{
+  position: sticky !important;
+  top: 8px !important;
+  }
+  .load-btn{
+    width: 95% !important;
+  }
+  .both-sections-container .bindclick{
+    text-decoration: none;
+    color: #212529 !important;
+  }
+
+@media screen and (max-width:992px) {
+  .section-one{
+    width: 100%;
+  }
+  .section-two{
+    width: 100%;
+    margin-top: 8px !important;
+  }
+  .load-btn{
+    width: 100% !important;
+  }
+}
+
+
+
+.blog-title {
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+
+.blog-name {
+  /* margin-left: -5px; */
+  font-weight: 400;
+}
+
+/* .blog-webkit-box-orient{
+ 
+} */
+.blog-description {
+  font-family: var(--bs-font-sans-serif) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #212529 !important;
+    background-color: #fff !important;
+    -webkit-text-size-adjust: 100% !important;
+    -webkit-tap-highlight-color: transparent !important;
+  position: relative !important;
+  text-align: justify;
+}
+
+.posted-date {
+  margin-bottom: 8px;
+}
+
+.read-more {
+  text-decoration: none !important;
+  margin-left: 8px;
+}
+
+.load-more-btn {
+  width: 75%;
+
+  padding: 15px 0px 10px 0px;
+}
+
+.categories-name {
+  margin-bottom: -10px;
+  line-height: 17px;
+  font-size: 13px;
+  font-family: var(--bs-font-sans-serif);
+  cursor: pointer;
+}
+
+/* .category-title {
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+} */
+
+.categories-name-hr {
+  margin-bottom: 10px;
+  margin-top: 17px;
+}
+
+.suggested-post-title {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.suggested-post-name {
+  font-size: 13px;
+  font-family: var(--bs-font-sans-serif);
+  cursor: pointer;
+}
+
+
+.suggested-post-name:hover {
+  color: blue;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.categories-name:hover {
+  color: blue;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.suggested-post-name-hr {
+  margin-bottom: 8px;
+  margin-top: -5px;
+}
+
+.load-btn {
+  margin-top: 20px;
+  width: 75%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 17px;
+  color: white;
+  padding: 10px 0px 10px 0px;
+}
+
+/* videos css start from here */
+
+.video-page-card {
+  box-shadow: none !important;
+  border: none !important;
+  
+}
+
+.video-page-card-body {
+  padding: 0px !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.video-page-card-title {
+  font-size: 1rem;
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 5px;
+  padding: 0 0.4rem;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.video-page-card-description {
+  color: #777;
+    font-size: .75rem;
+  margin-bottom: 0.4rem;
+  padding: 0 0.2rem;
+  overflow: hidden;
+    display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  margin-top: -15px;
+  margin-left: 5px;
+}
+
+.hr4 {
+  display: none;
+}
+
+/* top trending css start here */
+.first-row-videos {
+  margin-bottom: 70px;
+}
+
+.top-trending {
+  height: 500px;
+  width: 300px;
+  padding-left: 19px;
+  position: sticky;
+  top: 10px !important;
+  float: right;
+  margin-bottom: 260px;
+}
+.popular-heading{
+  color:chocolate;
+}
+.top-trending-title {
+  margin-top: -5px;
+  color:chocolate;
+}
+
+
+.container-bottom {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+/* CSS for the video-page-main-content */
+
+
+.video-page-main-content {
+  flex: 1 !important;
+  /* Let it take remaining space */
+  /* padding: 15px;  */
+  /* Optional: Add some padding */
+
+}
+
+
+/* CSS for the top-trending */
+
+
+/* Rest of your styles here */
+
+
+.top-trending-card-title {
+  font-size: 13px;
+  font-weight: bold;
+  font-weight: 500;
+  margin-bottom: 3px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.top-trending-card-description {
+  font-size: 11px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.video-category-btn-area{
+  border-left: 1px solid rgba(0, 0, 0, .125);
+  margin-top: 10px;
+}
+.video-category-btn{
+  background-color: brown;
+  color: white; 
+  padding: 1px 9px 5px 9px;
+}
+
+.video-category-btn:hover{
+  background-color: brown;
+  opacity: 0.9;
+  color: white; 
+  padding: 1px 9px 5px 9px;
+}
+
+
+.videos-page-category-title{
+  background: -webkit-linear-gradient(#f26e55, #e41e26);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 1px;
+  
+}
+
+/* iframe {
+  pointer-events: none !important; */
+/* } */
+
+/* 576 start */
+@media screen and (max-width: 576px) {
+
+  .blog-content,
+  .blog-content2 {
+    width: 100% !important;
+    margin: 0px !important;
+    padding-left: 5px !important;
+  }
+
+  .sidebar,
+  .sidebar2,
+  .blogs-search {
+    display: none !important;
+  }
+
+  .blog-name {
+    margin-left: 05px;
+  }
+
+  .hr4 {
+    display: block !important;
+  }
+
+  .top-trending {
+    float: none !important;
+    margin-top: 200px !important;
+    width: 100% !important;
+
+  }
+
+  /* Adjust styles as needed for small screens */
+  .container {
+    flex-direction: column;
+    /* Stack elements on small screens */
+  }
+
+  /* .top-trending, .video-page-main-content {
+    width: 100%; 
+} */
+  .footer {
+    float: left !important;
+  }
+}
+
+/* 576 end here */
+
+
+@media screen and (max-width:992px) {
+  .top-trending {
+    width: 250px !important;
+  }
+
+}
+
+/* order-sm-1
+order-md-2 */

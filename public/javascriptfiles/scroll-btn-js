@@ -1,0 +1,22 @@
+
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+
+    // Show the button when scrolling down past 50 pixels
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        var scrollToTopButton = document.getElementById("scrollToTopButton");
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (scrollTop > 400) {
+            scrollToTopButton.style.display = "block";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    }
+
+

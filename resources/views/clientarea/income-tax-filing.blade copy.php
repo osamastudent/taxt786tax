@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="allcss/home.css">
+  <script src="/multi-select-tag.js"></script>
+
+  <!-- these three links for select multi -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+<link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet"/> -->
+
+  <title>Income Tax Filing Individual</title>
+  <style>
+    .boxes input,
+    checkbox {
+      display: none;
+    }
+
+    .cursor-ponter-class {
+      cursor: pointer;
+    }
+
+    .next.btn {
+      background-color: #ff6d00 !important;
+      color: white !important;
+    }
+
+    .next.btn:hover {
+      background-color: #ffb300 !important;
+      color: black !important;
+    }
+
+    .form-card {
+      background-color: white;
+      border-radius: 5px !important;
+      box-shadow: 0 0.5px 3px rgba(0, 0, 0, 0.2);
+      padding-top: 20px;
+
+    }
+
+    form {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0.5px 3px rgba(0, 0, 0, 0.2);
+
+      padding: 20px;
+
+    }
+
+    .next.btn {
+      background-color: #ff6d00 !important;
+      color: white !important;
+    }
+
+    .next.btn:hover {
+      background-color: #ffb300 !important;
+      color: black !important;
+    }
+
+    .back {
+      background-color: black !important;
+      color: white !important;
+    }
+
+    .back:hover {
+      background-color: brown !important;
+      color: white !important;
+    }
+  </style>
+</head>
+
+<body>
+  @include('clientarea.navbar')
+  @section('content')
+
+
+  <!-- container start -->
+  <div class="container mt-5 mb-5">
+
+    <div class="w-75 card form-card mx-auto border-0">
+
+      <div class="card-header text-center bg-dark text-white">
+        <h3>Income Tax Filing Individual</h3>
+      </div>
+      <div class="card-body px-5 mt-3">
+
+        <form action="{{route('IncomeTaxFilingStore')}}" method="post">
+
+
+          @csrf
+          <!-- row start -->
+          <div class="row justify-content-end">
+            <div class="col-12 col-lg-4">
+              <label for="" class="form-label mb-1 mt-4 ">Select Tax Year or Years</label>
+              <select class="form-select personal-ntn-bottom-border-select border-top-0 border-end-0 border-start-0 " name="selectedValues[]" multiple multiselect-search="true" multiselect-select-all="true" multiselect-max-items="10">
+
+                <option class="bg-white" value="2017"> 2017</option>
+                <option class="bg-white" value="2018">2018</option>
+                <option class="bg-white" value="2019">2019</option>
+                <option class="bg-white" value="2020"> 2020</option>
+                <option class="bg-white" value="2021">2021</option>
+                <option class="bg-white" value="2022">2022</option>
+                <option class="bg-white" value="2023"> 2023</option>
+                <option class="bg-white" value="2024">2024</option>
+                <option class="bg-white" value="2025">2025</option>
+                <option class="bg-white" value="2026">2026</option>
+              </select>
+              @error('selectedValues')
+              {{$message}}
+              @enderror
+              <!-- <select data-placeholder="Begin typing a name to filter..." multiple class="form-select chosen-select" name="selectedValues[]">
+              <option class="bg-white" value="2017"> 2017</option>
+                <option class="bg-white" value="2018">2018</option>
+                <option class="bg-white" value="2019">2019</option>
+                <option class="bg-white" value="2020"> 2020</option>
+                <option class="bg-white" value="2021">2021</option>
+                <option class="bg-white" value="2022">2022</option>
+                <option class="bg-white" value="2023"> 2023</option>
+                <option class="bg-white" value="2024">2024</option>
+                <option class="bg-white" value="2025">2025</option>
+                <option class="bg-white" value="2026">2026</option>
+  </select> -->
+            </div>
+            <!-- row end -->
+
+            <!-- duplicate values like cards -->
+            <!-- row start -->
+            <div class="row">
+
+              <div class="col-6 col-lg-4 mt-3 d-none" id="salaryIncomeCardChecked">
+                <div class="card  w-100 mb-3">
+                  <div class="card-body  text-center " id="card-selected">
+                    <label class="card-title">Salary Income</label>
+                  </div>
+                  </label>
+                </div>
+              </div>
+
+
+
+              <div class="col-6 col-lg-4 d-none mt-3" id="RentIncomeCardChecked">
+                <div class="card  w-100 mb-3">
+                  <div class="card-body  text-center " id="card-selected">
+                    <label class="card-title">Rent Income</label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-6 col-lg-4 d-none mt-3" id="BusinessIncomeCardChecked">
+                <div class="card  w-100 mb-3">
+                  <div class="card-body  text-center " id="card-selected">
+                    <label class="card-title">Business Income</label>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="col-6 col-lg-4 d-none mt-3" id="SharesCapitalGainCardChecked">
+                <div class="card  w-100 mb-3">
+                  <div class="card-body  text-center" id="card-selected">
+                    <label class="card-title">Shares – Capital gain</label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-6 col-lg-4 d-none mt-3" id="OtherIncomeCardChecked">
+                <div class="card  w-100 mb-3">
+                  <div class="card-body  text-center" id="card-selected">
+                    <label class="card-title">Other Income</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6 col-lg-4 d-none mt-3" id="WithholdingAdjustableCardChecked">
+                <div class="card  w-100 mb-3">
+                  <div class="card-body  text-center" id="card-selected">
+                    <label class="card-title">Withholding / Adjustable or Final Tax </label>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- row end -->
+
+
+            <!-- row start -->
+            <div class="row  mt-3 boxes">
+
+              <div class="col-6 col-lg-4 mt-3">
+                <div class="card  w-100 mb-3">
+                  <label for="salaryincomeid">
+                    <div class="card-body  text-center card-hover" id="card-selected">
+                      <label for="salaryincomeid" class="cursor-ponter-class card-title">Salary Income</label>
+                      <input type="checkbox" name="salaryincomename" value="salary_income" onclick="SalaryIncome()" id="salaryincomeid">
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+
+              <div class="col-6 col-lg-4 mt-3">
+                <div class="card  w-100 mb-3">
+                  <label for="rentincomeid">
+                    <div class="card-body  text-center card-hover" id="RentIncomeCardHover">
+                      <label for="rentincomeid" class="cursor-ponter-class card-title">Rent Income</label>
+                      <input type="checkbox" name="rentincomename" value="rent_income" onclick="RentIncome()" id="rentincomeid">
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+
+              <div class="col-6 col-lg-4 mt-3">
+                <div class="card  w-100 mb-3">
+                  <label for="businessincomeid">
+                    <div class="card-body  text-center card-hover" id="BusinessIncomeCardHover">
+                      <label for="businessincomeid" class="cursor-ponter-class card-title">Business Income</label>
+                      <input type="checkbox" name="businessincomename" value="business_income" onclick="BusinessIncome()" id="businessincomeid">
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+
+              <div class="col-6 col-lg-4 mt-3">
+                <div class="card  w-100 mb-3">
+                  <label for="sharescapitalgainid">
+                    <div class="card-body  text-center card-hover" id="SharesCapitalGainCardHover">
+                      <label for="sharescapitalgainid" class="cursor-ponter-class card-title">Shares – Capital gain</label>
+                      <input type="radio" name="sharescapitalgainname" value="shares_capital_gain" onclick="SharesCapitalGain()" id="sharescapitalgainid">
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+
+              <div class="col-6 col-lg-4 mt-3">
+                <div class="card  w-100 mb-3">
+                  <label for="otherincomeid">
+                    <div class="card-body  text-center card-hover" id="OtherIncomeCardHover">
+                      <label for="otherincomeid" class="cursor-ponter-class card-title">Other Income</label>
+                      <input type="checkbox" name="otherincomename" value="other_income" onclick="OtherIncome()" id="otherincomeid">
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+
+              <!-- <div class="col-8 col-lg-4  mt-3">
+                <div class="card  w-100 mb-3">
+                  <label for="withholdingadjustableid" >
+                    <div class="card-body  text-center card-hover" id="WithholdingAdjustableCardHover" >
+                      <label for="withholdingadjustableid" class="cursor-ponter-class card-title">Withholding / Adjustable or Final Tax </label>
+
+                      <input type="radio" name="withholdingadjustablename" value="withholding_adjustable_or_final_tax" id="withholdingadjustableid">
+                    </div>
+                  </label>
+                </div> -->
+
+              <div class="col-8 col-lg-4 mt-3">
+                <div class="card w-100 mb-3">
+                  <label for="withholdingadjustableid">
+                    <div class="card-body text-center card-hover" id="WithholdingAdjustableCardHover">
+                      <label for="withholdingadjustableid" class="cursor-pointer-class card-title">Withholding / Adjustable or Final Tax </label>
+                      <input type="checkbox" onclick="Withholding()" name="withholdingadjustablename" value="withholding_adjustable_or_final_tax" id="withholdingadjustableid">
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+
+
+            </div><!-- row end -->
+
+
+            <div class="row">
+              <div class="col-12 mt-3 d-flex justify-content-end">
+
+                <button type="submit" href="#" id="nextButton" class="next btn " disabled>Next</button>
+
+
+        </form><!-- form end -->
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  </div><!-- container end -->
+
+
+
+  <!-- these for slect multi with threee links -->
+  <!-- <script>
+    $(".chosen-select").chosen({
+  no_results_text: "Oops, nothing found!"
+})
+  </script> -->
+
+
+  <script>
+    var salaryCheckbox = document.getElementById("salaryincomeid");
+    var rentCheckbox = document.getElementById("rentincomeid");
+    var businessCheckbox = document.getElementById("businessincomeid");
+    var sharescapitalgainCheckbox = document.getElementById("sharescapitalgainid");
+    var otherincomeCheckbox = document.getElementById("otherincomeid");
+    var withholdingadjustableCheckbox = document.getElementById("withholdingadjustableid");
+
+    var card_selected = document.getElementById("card-selected");
+    var nextButton = document.getElementById("nextButton");
+
+    var salaryIncomecardChecked = document.getElementById("salaryIncomeCardChecked");
+    var salaryIncomeCardHover = document.getElementById("salaryIncomeCardHover");
+
+    var RentIncomeCardChecked = document.getElementById("RentIncomeCardChecked");
+    var RentIncomeCardHover = document.getElementById("RentIncomeCardHover");
+
+    var BusinessIncomeCardHover = document.getElementById("BusinessIncomeCardHover");
+    var SharesCapitalGainCardHover = document.getElementById("SharesCapitalGainCardHover");
+    var OtherIncomeCardHover = document.getElementById("OtherIncomeCardHover");
+    var WithholdingAdjustableCardHover = document.getElementById("WithholdingAdjustableCardHover");
+
+    var BusinessIncomeCardChecked = document.getElementById("BusinessIncomeCardChecked");
+    var SharesCapitalGainCardChecked = document.getElementById("SharesCapitalGainCardChecked");
+    var OtherIncomeCardChecked = document.getElementById("OtherIncomeCardChecked");
+    var WithholdingAdjustableCardChecked = document.getElementById("WithholdingAdjustableCardChecked");
+
+    function SalaryIncome() {
+      var x = document.getElementById("salaryincomeid").checked;
+      if (x === true) {
+        salaryIncomecardChecked.classList.toggle("d-none");
+        // WithholdingAdjustableCardHover.classList.toggle('card-selected-hover');
+      } else {
+        salaryIncomecardChecked.classList.toggle("d-none");
+        salaryIncomeCardHover.classList.toggle('card-selected-hover');
+      }
+    }
+
+
+
+
+    function RentIncome() {
+      var x = document.getElementById("rentincomeid").checked;
+      if (x === true) {
+        RentIncomeCardChecked.classList.toggle("d-none");
+
+      } else {
+        RentIncomeCardChecked.classList.toggle("d-none");
+        RentIncomeCardHover.classList.toggle('card-selected-hover');
+      }
+    }
+
+    function BusinessIncome() {
+      var x = document.getElementById("businessincomeid").checked;
+      if (x === true) {
+        BusinessIncomeCardChecked.classList.toggle("d-none");
+
+      } else {
+        BusinessIncomeCardChecked.classList.toggle("d-none");
+        BusinessIncomeCardHover.classList.toggle('card-selected-hover');
+      }
+    }
+
+    function SharesCapitalGain() {
+      var x = document.getElementById("sharescapitalgainid").checked;
+      if (x === true) {
+        SharesCapitalGainCardChecked.classList.toggle("d-none");
+
+      } else {
+        SharesCapitalGainCardChecked.classList.toggle("d-none");
+        SharesCapitalGainCardHover.classList.toggle('card-selected-hover');
+      }
+    }
+
+    function OtherIncome() {
+      var x = document.getElementById("otherincomeid").checked;
+      if (x === true) {
+        OtherIncomeCardChecked.classList.toggle("d-none");
+
+      } else {
+        OtherIncomeCardChecked.classList.toggle("d-none");
+        OtherIncomeCardHover.classList.toggle('card-selected-hover');
+      }
+    }
+
+    function Withholding() {
+      var x = document.getElementById("withholdingadjustableid").checked;
+      if (x === true) {
+        WithholdingAdjustableCardChecked.classList.toggle("d-none");
+
+      } else {
+        WithholdingAdjustableCardChecked.classList.toggle("d-none");
+        WithholdingAdjustableCardHover.classList.toggle('card-selected-hover');
+      }
+    }
+
+    // Get all checkboxes
+    var checkboxes = [
+      document.getElementById("salaryincomeid"),
+      document.getElementById("rentincomeid"),
+      document.getElementById("businessincomeid"),
+      document.getElementById("sharescapitalgainid"),
+      document.getElementById("otherincomeid"),
+      document.getElementById("withholdingadjustableid")
+    ];
+
+
+
+    // Function to check if at least one checkbox is checked
+    function isAnyCheckboxChecked() {
+      return checkboxes.some(checkbox => checkbox.checked);
+    }
+
+    // Add event listeners to checkboxes
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("click", function() {
+        // Update the "next" button's disabled attribute based on checkbox states
+        nextButton.disabled = !isAnyCheckboxChecked();
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
